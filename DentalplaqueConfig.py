@@ -1,7 +1,7 @@
 from PIL import Image
 
 #  open image
-img = Image.open(r"F:\Users\user\Desktop\iGEM\2018\理论组\testpicRawFiles\testpic_10min_Range.jpg")
+img = Image.open(r"F:\Users\user\Desktop\iGEM\2018\理论组\testpicRawFiles\FruA_30min_Range.jpg")
 result = open(r"F:\Users\user\Desktop\iGEM\2018\理论组\testpicRawFiles\resultFile.txt", "w")
 
 width = img.size[0]   # width of the image
@@ -28,8 +28,8 @@ def detectionFromRegularImg():
                 pix_range += 1
     result.write("The sum of image darkness: {0}\n".format(img_darkness))
     result.write("The sum of the area of colored pixes: {0}\n".format(pix_range))
-    pix_range = 0
-    img_darkness = 0
+    # pix_range = 0
+    # img_darkness = 0
 
 
 
@@ -45,13 +45,16 @@ def detectionFromRangeImg():
     result.write("From Range")
     result.write("The sum of image darkness: {0}\n".format(img_darkness))
     result.write("The sum of the area of colored pixes: {0}\n".format(pix_range))
-    pix_range = 0
-    img_darkness = 0
+    # pix_range = 0
+    # img_darkness = 0
 
 
-detectionFromRegularImg()
+detectionFromRangeImg()
 
 print("imageCount: ", img_darkness)
 print("imageRange: ", pix_range)
+
+pix_range = 0
+img_darkness = 0
 
 result.close()
